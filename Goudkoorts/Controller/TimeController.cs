@@ -1,4 +1,4 @@
-﻿using Goudkoorts.View;
+﻿using Goudkoorts.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Goudkoorts.Controller
 {
-    class ViewController
+    class TimeController
     {
-        private InputView _inputview;
-        private OutputView _outputview;
+        public Map Map { get; set; }
     }
 }

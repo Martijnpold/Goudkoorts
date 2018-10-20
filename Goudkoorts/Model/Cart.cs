@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Goudkoorts.Model
 {
-    public abstract class Tile
+    public class Cart
     {
-        public Dictionary<Direction, Tile> Neighbours { get; set; }
-
-        public abstract char GetIcon();
+        public bool HasGold { get; set; }
     }
 }
