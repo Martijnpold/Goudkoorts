@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\GameController.cs" />
-    <Compile Include="Controller\SpawnTimerController.cs" />
+    <Compile Include="Controller\TimeController.cs" />
     <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\Track\EndTrack.cs" />
     <Compile Include="Model\Track\DockTrack.cs" />

@@ -44,7 +44,6 @@
     <ShowAsAssociation>
       <Field Name="_inputview" />
       <Field Name="_outputview" />
-      <Field Name="_timerController" />
       <Property Name="Map" />
     </ShowAsAssociation>
   </Class>
@@ -76,7 +75,7 @@
   <Class Name="Goudkoorts.Model.NormalTrack">
     <Position X="0.5" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAgAIQAA=</HashCode>
+      <HashCode>QhAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAAAAgAIQCA=</HashCode>
       <FileName>Model\Track\NormalTrack.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -122,18 +121,18 @@
       <FileName>Model\Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Goudkoorts.Controller.SpawnTimerController" Collapsed="true">
+  <Class Name="Goudkoorts.Controller.TimeController" Collapsed="true">
     <Position X="6" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controller\SpawnTimerController.cs</FileName>
+      <FileName>Controller\TimeController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Map" />
     </ShowAsAssociation>
   </Class>
   <Enum Name="Goudkoorts.Model.Direction" Collapsed="true">
-    <Position X="0.5" Y="3.75" Width="1.5" />
+    <Position X="2.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
       <FileName>Model\Direction.cs</FileName>
