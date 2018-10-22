@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Goudkoorts.View
 {
-    class InputView
+    public class InputView
     {
+        public ConsoleKey getKeyPress()
+        {
+            return Console.ReadKey().Key;
+        }
     }
 }
