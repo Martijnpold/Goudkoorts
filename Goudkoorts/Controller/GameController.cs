@@ -12,7 +12,7 @@ namespace Goudkoorts.Controller
     {
         private InputView _inputview;
         private OutputView _outputview;
-        private SpawnTimerController _timerController;
+        private TimeController _timerController;
         public Map Map { get; set; }
 
         public void Start()

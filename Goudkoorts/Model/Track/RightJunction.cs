@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Goudkoorts.Model
 {
-    public class JunctionTrack : TrackBase
+    class RightJunction : JunctionBase
     {
         public override TrackBase GetNext()
         {
@@ -18,6 +19,11 @@ namespace Goudkoorts.Model
         }
 
         public override void MoveOnTop(Cart cart)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Switch()
         {
             throw new NotImplementedException();
         }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Goudkoorts.Model
 {
-    public abstract class TrackBase : Tile
+    public abstract class TrackBase
     {
         public Cart Cart { get; set; }
 
