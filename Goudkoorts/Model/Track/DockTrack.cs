@@ -20,6 +20,7 @@ namespace Goudkoorts.Model
         public override List<Direction> GetAllConnections()
         {
             Direction[] directions = new Direction[] { GetPrevious(), GetNext() };
+            return new List<Direction>(directions);
         }
 
         public override void MoveOnTop(Cart cart, Direction dir)
