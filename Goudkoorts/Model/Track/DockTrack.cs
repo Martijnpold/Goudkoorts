@@ -7,12 +7,17 @@ namespace Goudkoorts.Model
 {
     public class DockTrack : TrackBase
     {
-        public override TrackBase GetNext()
+        public override Direction GetNext()
         {
-            throw new NotImplementedException();
+            return Direction.Left;
         }
 
-        public override TrackBase GetPrevious()
+        public override Direction GetPrevious()
+        {
+            return Direction.Right;
+        }
+
+        public override List<Direction> GetAllConnections()
         {
             throw new NotImplementedException();
         }
@@ -29,7 +34,7 @@ namespace Goudkoorts.Model
 
         public override char GetIcon()
         {
-            throw new NotImplementedException();
+            return 'D';
         }
     }
 }

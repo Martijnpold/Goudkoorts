@@ -8,11 +8,10 @@ namespace Goudkoorts.Model
 {
     class Floor : Tile
     {
-        public TrackBase TrackOnTop { get; set; }
-
         public override char GetIcon()
         {
-            return '-';
+            if (TrackOnTop != null) return TrackOnTop.GetIcon();
+            return ' ';
         }
     }
 }

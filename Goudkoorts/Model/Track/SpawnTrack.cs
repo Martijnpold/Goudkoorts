@@ -12,12 +12,17 @@ namespace Goudkoorts.Model
             throw new NotImplementedException();
         }
 
-        public override TrackBase GetNext()
+        public override Direction GetNext()
         {
-            throw new NotImplementedException();
+            return Direction.Right;
         }
 
-        public override TrackBase GetPrevious()
+        public override Direction GetPrevious()
+        {
+            return Direction.None;
+        }
+
+        public override List<Direction> GetAllConnections()
         {
             throw new NotImplementedException();
         }
@@ -34,7 +39,7 @@ namespace Goudkoorts.Model
 
         public override char GetIcon()
         {
-            throw new NotImplementedException();
+            return 'S';
         }
     }
 }

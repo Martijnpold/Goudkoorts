@@ -50,7 +50,7 @@
   <Class Name="Goudkoorts.Model.TrackBase">
     <Position X="4.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAgAIQAA=</HashCode>
+      <HashCode>ABAAAEAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAgAIQAA=</HashCode>
       <FileName>Model\Track\TrackBase.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -141,12 +141,9 @@
   <Class Name="Goudkoorts.Model.Floor">
     <Position X="8.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Floor.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="TrackOnTop" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.River">
     <Position X="10.25" Y="6" Width="1.5" />

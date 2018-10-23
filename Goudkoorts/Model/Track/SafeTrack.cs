@@ -7,19 +7,28 @@ namespace Goudkoorts.Model
 {
     public class SafeTrack : TrackBase
     {
-        public override TrackBase GetNext()
+        public override Direction GetNext()
         {
-            throw new NotImplementedException();
+            return Direction.Left;
         }
 
-        public override TrackBase GetPrevious()
+        public override Direction GetPrevious()
+        {
+            return Direction.Right;
+        }
+
+        public override List<Direction> GetAllConnections()
         {
             throw new NotImplementedException();
         }
 
         public override void MoveOnTop(Cart cart)
         {
-            throw new NotImplementedException();
+            if (Cart == null)
+            {
+                Cart = cart;
+                
+            }
         }
 
         public override void Tick()
@@ -29,7 +38,8 @@ namespace Goudkoorts.Model
 
         public override char GetIcon()
         {
-            throw new NotImplementedException();
+            if (Cart != null) return '×';
+            return '_';
         }
     }
 }

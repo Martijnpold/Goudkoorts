@@ -9,5 +9,14 @@ namespace Goudkoorts.Model
     public class Cart
     {
         public bool HasGold { get; set; }
+        public TrackBase Track { get; set; }
+
+        public void Decouple()
+        {
+            if(Track != null)
+            {
+                Track.Cart = null;
+            }
+        }
     }
 }

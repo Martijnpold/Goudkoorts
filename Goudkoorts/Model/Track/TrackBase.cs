@@ -10,12 +10,16 @@ namespace Goudkoorts.Model
     {
         public Cart Cart { get; set; }
 
-        public abstract TrackBase GetNext();
+        public abstract Direction GetNext();
 
-        public abstract TrackBase GetPrevious();
+        public abstract Direction GetPrevious();
+
+        public abstract List<Direction> GetAllConnections();
 
         public abstract void MoveOnTop(Cart cart);
 
         public abstract void Tick();
+
+        public abstract char GetIcon();
     }
 }

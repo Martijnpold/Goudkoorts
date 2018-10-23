@@ -7,6 +7,28 @@ namespace Goudkoorts.Model
 {
     public abstract class JunctionBase : TrackBase
     {
-        public abstract void Switch();
+        public int Id { get; set; }
+        public Direction Direction { get; private set; }
+
+        public void Switch()
+        {
+            if(Direction.Equals(Direction.Up))
+            {
+                Direction = Direction.Down;
+            } else
+            {
+                Direction = Direction.Up;
+            }
+        }
+
+        public override void MoveOnTop(Cart cart)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Tick()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

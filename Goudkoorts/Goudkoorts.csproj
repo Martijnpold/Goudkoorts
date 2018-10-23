@@ -48,7 +48,7 @@
     <Compile Include="Controller\TimeController.cs" />
     <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\Floor.cs" />
-    <Compile Include="Model\SeaRoute.cs" />
+    <Compile Include="Model\River.cs" />
     <Compile Include="Model\Track\EndTrack.cs" />
     <Compile Include="Model\Track\DockTrack.cs" />
     <Compile Include="Model\Track\JunctionBase.cs" />

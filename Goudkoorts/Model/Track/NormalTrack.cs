@@ -10,15 +10,17 @@ namespace Goudkoorts.Model
         public Direction In { get; set; }
         public Direction Out { get; set; }
 
-        public TrackBase Next { get; set; }
-        public TrackBase Previous { get; set; }
-
-        public override TrackBase GetNext()
+        public override Direction GetNext()
         {
-            return Next;
+            return Out;
         }
 
-        public override TrackBase GetPrevious()
+        public override Direction GetPrevious()
+        {
+            return In;
+        }
+
+        public override List<Direction> GetAllConnections()
         {
             throw new NotImplementedException();
         }
@@ -35,7 +37,31 @@ namespace Goudkoorts.Model
 
         public override char GetIcon()
         {
-            throw new NotImplementedException();
+            if(In.Equals(Direction.Up))
+            {
+                if (Out.Equals(Direction.Right)) return '╚';
+                if (Out.Equals(Direction.Down)) return '║';
+                if (Out.Equals(Direction.Left)) return '╝';
+            }
+            if (In.Equals(Direction.Right))
+            {
+                if (Out.Equals(Direction.Up)) return '╚';
+                if (Out.Equals(Direction.Down)) return '╔';
+                if (Out.Equals(Direction.Left)) return '═';
+            }
+            if (In.Equals(Direction.Down))
+            {
+                if (Out.Equals(Direction.Up)) return '║';
+                if (Out.Equals(Direction.Right)) return '╔';
+                if (Out.Equals(Direction.Left)) return '╗';
+            }
+            if (In.Equals(Direction.Left))
+            {
+                if (Out.Equals(Direction.Up)) return '╝';
+                if (Out.Equals(Direction.Right)) return '═';
+                if (Out.Equals(Direction.Down)) return '╗';
+            }
+            return '*';
         }
     }
 }

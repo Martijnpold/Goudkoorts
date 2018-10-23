@@ -8,34 +8,32 @@ namespace Goudkoorts.Model
 {
     class RightJunction : JunctionBase
     {
-        public override TrackBase GetNext()
+        public override Direction GetNext()
         {
-            throw new NotImplementedException();
+            return Direction.Right;
         }
 
-        public override TrackBase GetPrevious()
+        public override Direction GetPrevious()
         {
-            throw new NotImplementedException();
+            return Direction;
         }
 
-        public override void MoveOnTop(Cart cart)
+        public override List<Direction> GetAllConnections()
         {
-            throw new NotImplementedException();
-        }
-
-        public override void Switch()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Tick()
-        {
-            throw new NotImplementedException();
+            Direction[] dirs = { Direction.Up, Direction.Down, Direction.Right };
+            return new List<Direction>(dirs);
         }
 
         public override char GetIcon()
         {
-            throw new NotImplementedException();
+            if (Direction.Equals(Direction.Up))
+            {
+                return '┘';
+            }
+            else
+            {
+                return '┐';
+            }
         }
     }
 }
