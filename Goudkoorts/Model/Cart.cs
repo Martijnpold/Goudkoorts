@@ -16,6 +16,7 @@ namespace Goudkoorts.Model
             if(Track != null)
             {
                 Track.Cart = null;
+                Track = null;
             }
         }
     }

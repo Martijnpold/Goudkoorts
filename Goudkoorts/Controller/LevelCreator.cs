@@ -125,6 +125,7 @@ namespace Goudkoorts.Controller
                 for (int y = 0; y < grid.GetLength(1); y++)
                 {
                     Tile tile = grid[x, y];
+                    if (tile.TrackOnTop != null) tile.TrackOnTop.Tile = tile;
                     foreach (Direction dir in Enum.GetValues(typeof(Direction)))
                     {
                         int x1 = x;

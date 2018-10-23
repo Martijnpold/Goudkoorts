@@ -21,14 +21,22 @@ namespace Goudkoorts.Model
             }
         }
 
-        public override void MoveOnTop(Cart cart)
+        public override void MoveOnTop(Cart cart, Direction dir)
         {
-            throw new NotImplementedException();
+            Direction from = DirectionUtils.GetOpposite(dir);
+            if(GetPrevious().Equals(from))
+            {
+                Cart = cart;
+            }
         }
 
         public override void Tick()
         {
-            throw new NotImplementedException();
+            if (Cart != null)
+            {
+                Tile tile = Tile.Neighbours[GetNext()];
+                tile.MoveCartOnTop(Cart, GetNext());
+            }
         }
     }
 }

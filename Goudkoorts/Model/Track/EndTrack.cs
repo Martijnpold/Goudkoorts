@@ -19,22 +19,27 @@ namespace Goudkoorts.Model
 
         public override List<Direction> GetAllConnections()
         {
-            throw new NotImplementedException();
+            Direction[] directions = new Direction[] { GetPrevious() };
+            return new List<Direction>(directions);
         }
 
-        public override void MoveOnTop(Cart cart)
+        public override void MoveOnTop(Cart cart, Direction dir)
         {
-            throw new NotImplementedException();
+            if (Cart == null)
+            {
+                cart.Decouple();
+                Cart = cart;
+            }
         }
 
         public override void Tick()
         {
-            throw new NotImplementedException();
+            if (Cart != null) Cart.Decouple();
         }
 
         public override char GetIcon()
         {
-            return '@';
+            return '#';
         }
     }
 }

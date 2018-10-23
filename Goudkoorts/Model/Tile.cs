@@ -18,5 +18,11 @@ namespace Goudkoorts.Model
         {
             Neighbours = new Dictionary<Direction, Tile>();
         }
+
+        public void MoveCartOnTop(Cart cart, Direction dir)
+        {
+            if (TrackOnTop == null) return;
+            TrackOnTop.MoveOnTop(cart, dir);
+        }
     }
 }

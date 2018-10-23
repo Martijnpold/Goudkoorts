@@ -19,5 +19,10 @@ namespace Goudkoorts.Model
             RailEnds = new List<TrackBase>();
             Junctions = new List<JunctionBase>();
         }
+
+        public void TickRails()
+        {
+
+        }
     }
 }

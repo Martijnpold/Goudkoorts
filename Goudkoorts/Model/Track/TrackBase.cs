@@ -8,6 +8,8 @@ namespace Goudkoorts.Model
 {
     public abstract class TrackBase
     {
+        public Tile Tile { get; set; }
+
         public Cart Cart { get; set; }
 
         public abstract Direction GetNext();
@@ -16,7 +18,7 @@ namespace Goudkoorts.Model
 
         public abstract List<Direction> GetAllConnections();
 
-        public abstract void MoveOnTop(Cart cart);
+        public abstract void MoveOnTop(Cart cart, Direction dir);
 
         public abstract void Tick();
 
