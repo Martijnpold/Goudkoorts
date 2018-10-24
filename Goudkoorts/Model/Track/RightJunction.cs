@@ -28,11 +28,11 @@ namespace Goudkoorts.Model
         {
             if (Direction.Equals(Direction.Up))
             {
-                return '┘';
+                return '╝';
             }
             else
             {
-                return '┐';
+                return '╗';
             }
         }
     }
