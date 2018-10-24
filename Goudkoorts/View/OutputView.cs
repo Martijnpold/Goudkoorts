@@ -39,6 +39,7 @@ namespace Goudkoorts.View
             Console.WriteLine("║       U   : karretje           ║                     ║");
             Console.WriteLine("║       Ü   : gevuld karretje    ║                     ║");
             Console.WriteLine("║       _   : safe track         ║                     ║");
+            Console.WriteLine("║       x   : cart on safe track ║                     ║");
             Console.WriteLine("║       ~   : zee                ║                     ║");
             Console.WriteLine("║       S   : spawn point        ║                     ║");
             Console.WriteLine("║      <*>  : ship               ║ * = amount of gold  ║");
