@@ -41,8 +41,9 @@ namespace Goudkoorts.View
             Console.WriteLine("║       _   : safe track         ║                     ║");
             Console.WriteLine("║       ~   : zee                ║                     ║");
             Console.WriteLine("║       S   : spawn point        ║                     ║");
-            Console.WriteLine("║      <*>  : ship               ║                     ║");
+            Console.WriteLine("║      <*>  : ship               ║ * = amount of gold  ║");
             Console.WriteLine("║       D   : dock               ║                     ║");
+            Console.WriteLine("║       #   : end track          ║                     ║");
             Console.WriteLine("╚════════════════════════════════╩═════════════════════╝");
             Console.WriteLine("");
             Console.ReadLine();
