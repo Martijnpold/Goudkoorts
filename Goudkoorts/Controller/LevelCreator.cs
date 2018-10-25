@@ -16,7 +16,22 @@ namespace Goudkoorts.Controller
             Map = new Map();
             Tile[,] grid = new Tile[12, 10];
             //Water
-            for (int x = 0; x < 12; x++) grid[x, 0] = new River();
+            River[] rivers = new River[12];
+            for (int x = 0; x < 12; x++)
+            {
+                River river = new River();
+                if (x == 0)
+                {
+                    Map.Corner = river;
+                }
+                else
+                {
+                    river.Previous = rivers[x - 1];
+                    rivers[x - 1].Next = river;
+                }
+                grid[x, 0] = river;
+                rivers[x] = river;
+            }
 
             for (int y = 0; y < 10; y++)
             {

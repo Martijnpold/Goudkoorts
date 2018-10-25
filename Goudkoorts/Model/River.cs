@@ -8,6 +8,9 @@ namespace Goudkoorts.Model
 {
     class River : Tile
     {
+        public River Next { get; set; }
+        public River Previous { get; set; }
+
         public override char GetIcon()
         {
             return '~';
