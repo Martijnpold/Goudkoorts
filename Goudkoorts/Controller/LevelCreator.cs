@@ -168,19 +168,6 @@ namespace Goudkoorts.Controller
                     }
                 }
             }
-
-            for (int y = 0; y < 10; y++)
-            {
-                for (int x = 0; x < 12; x++)
-                {
-                    Tile tile = grid[x, y];
-                    if (tile != null)
-                    {
-                        Console.Write(tile.GetIcon());
-                    }
-                }
-                Console.WriteLine();
-            }
         }
     }
 }
