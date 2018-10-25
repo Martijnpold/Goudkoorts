@@ -60,14 +60,18 @@ namespace Goudkoorts.Controller
 
         public void GameOver()
         {
+            ConsoleKey input = _inputView.GetKeyPress();
             _outputView.PrintGameOver();
+            if (input == ConsoleKey.R) Start();
+            if (input == ConsoleKey.Escape) Environment.Exit(0);
+
         }
 
         // Exit Game
         public void QuitGame()
         {
             System.Console.Clear();
-            Console.WriteLine("weet je zeker dat je wilt stoppen? (j / n)");
+            Console.WriteLine("weet je zeker dat je wilt stoppen? (J / N)");
 
             ConsoleKey input = _inputView.GetKeyPress();
 
