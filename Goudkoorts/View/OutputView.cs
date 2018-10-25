@@ -22,7 +22,7 @@ namespace Goudkoorts.View
             System.Console.Clear();
             Console.WriteLine("╔══════════════════════════════════════════════════════╗");
             Console.WriteLine("║                Welkom Bij Goudkoorts!                ║");
-            Console.WriteLine("║               Druk op S om te beginnen               ║");
+            Console.WriteLine("║              Druk op 's' om te beginnen              ║");
             Console.WriteLine("║               Druk op ESC om te stoppen              ║");
             Console.WriteLine("╚══════════════════════════════════════════════════════╝");
             Console.WriteLine("");
@@ -54,8 +54,8 @@ namespace Goudkoorts.View
             System.Console.Clear();
             Console.WriteLine("╔══════════════════════════════════════════════════════╗");
             Console.WriteLine("║                        Game Over!                    ║");
-            Console.WriteLine("║            Druk op R om overnieuw te spelen          ║");
-            Console.WriteLine("║                Druk op ESC om te stoppen             ║");
+            Console.WriteLine("║            Druk op 'r' om overnieuw te spelen        ║");
+            Console.WriteLine("║                Druk op 'ESC' om te stoppen           ║");
             Console.WriteLine("╚══════════════════════════════════════════════════════╝");
             Console.WriteLine("");
         }
