@@ -46,7 +46,8 @@ namespace Goudkoorts.Model
 
         public override char GetIcon()
         {
-            if(In.Equals(Direction.Up))
+            if (Cart != null) return Cart.GetIcon();
+            if (In.Equals(Direction.Up))
             {
                 if (Out.Equals(Direction.Right)) return '╚';
                 if (Out.Equals(Direction.Down)) return '║';

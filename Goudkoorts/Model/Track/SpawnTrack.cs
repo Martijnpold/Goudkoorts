@@ -48,6 +48,7 @@ namespace Goudkoorts.Model
 
         public override char GetIcon()
         {
+            if (Cart != null) return Cart.GetIcon();
             return 'S';
         }
     }
