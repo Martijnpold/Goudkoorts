@@ -19,5 +19,13 @@ namespace Goudkoorts.Model
             RailEnds = new List<TrackBase>();
             Junctions = new List<JunctionBase>();
         }
+
+        public void SwitchJunction(int id)
+        {
+            foreach(JunctionBase junction in Junctions)
+            {
+                if (junction.Id == id) junction.Switch();
+            }
+        }
     }
 }

@@ -81,7 +81,7 @@ namespace Goudkoorts.Controller
             junc = new RightJunction() { Id = 2 };
             Map.Junctions.Add(junc);
             grid[5, 4].TrackOnTop = junc;
-            junc = new LeftJunction() { Id = 3 };
+            junc = new LeftJunction() { Id = 5 };
             Map.Junctions.Add(junc);
             grid[9, 4].TrackOnTop = junc;
             grid[10, 4].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
@@ -96,11 +96,11 @@ namespace Goudkoorts.Controller
             grid[8, 5].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Down };
             grid[9, 5].TrackOnTop = new NormalTrack() { Out = Direction.Up, In = Direction.Left };
             //______L>R___
-            junc = new LeftJunction() { Id = 4 };
+            junc = new LeftJunction() { Id = 3 };
             Map.Junctions.Add(junc);
             grid[6, 6].TrackOnTop = junc;
             grid[7, 6].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
-            junc = new RightJunction() { Id = 5 };
+            junc = new RightJunction() { Id = 4 };
             Map.Junctions.Add(junc);
             grid[8, 6].TrackOnTop = junc;
             //S>>>>>^_>>>V

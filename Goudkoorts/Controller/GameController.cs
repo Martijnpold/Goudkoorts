@@ -38,17 +38,20 @@ namespace Goudkoorts.Controller
 
         public void PlayLevel()
         {
+            LevelCreator creator = new LevelCreator();
+            creator.Create();
+            Map = creator.Map;
             while (true)
             {
-                _outputView.PrintLevel();
+                _outputView.PrintLevel(Map);
                 ConsoleKey input = _inputView.GetKeyPress();
                 if (input == ConsoleKey.Escape) QuitGame();
-                //if (input == ConsoleKey.D1) // Flip switch 1 
-                //if (input == ConsoleKey.D2) // Flip switch 2
-                //if (input == ConsoleKey.D3) // Flip switch 3
-                //if (input == ConsoleKey.D4) // Flip switch 4
-                //if (input == ConsoleKey.D5) // Flip switch 5
-                ////if(IsCrashed()) GameOver();
+                if (input == ConsoleKey.D1) Map.SwitchJunction(1);
+                if (input == ConsoleKey.D2) Map.SwitchJunction(2);
+                if (input == ConsoleKey.D3) Map.SwitchJunction(3);
+                if (input == ConsoleKey.D4) Map.SwitchJunction(4);
+                if (input == ConsoleKey.D5) Map.SwitchJunction(5);
+                //if(IsCrashed()) GameOver();
             }
         }
 
