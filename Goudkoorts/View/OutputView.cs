@@ -10,11 +10,27 @@ namespace Goudkoorts.View
 {
     public class OutputView
     {
-        public void PrintLevel()
+        public void PrintLevel(Map map)
         {
-            System.Console.Clear();
-            LevelCreator p = new LevelCreator();
-            p.Create();
+            Console.Clear();
+            Tile x, y;
+            bool xDone, yDone;
+            y = map.Corner;
+            yDone = false;
+            while (!yDone)
+            {
+                x = y;
+                xDone = false;
+                while (!xDone)
+                {
+                    Console.Write(x.GetIcon());
+                    xDone = !x.Neighbours.ContainsKey(Direction.Right);
+                    if (!xDone) x = x.Neighbours[Direction.Right];
+                }
+                Console.Write("\n");
+                yDone = !y.Neighbours.ContainsKey(Direction.Down);
+                if (!yDone) y = y.Neighbours[Direction.Down];
+            }
         }
 
         public void PrintWelcomeScreen()
