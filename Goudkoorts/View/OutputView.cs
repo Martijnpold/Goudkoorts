@@ -1,4 +1,5 @@
-﻿using Goudkoorts.Model;
+﻿using Goudkoorts.Controller;
+using Goudkoorts.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +10,26 @@ namespace Goudkoorts.View
 {
     public class OutputView
     {
-
-        public void PrintMap(Map map)
+        public void PrintLevel()
         {
-
+            System.Console.Clear();
+            LevelCreator p = new LevelCreator();
+            p.Create();
         }
 
-        public void WelcomeScreen()
+        public void PrintWelcomeScreen()
         {
             System.Console.Clear();
             Console.WriteLine("╔══════════════════════════════════════════════════════╗");
             Console.WriteLine("║                Welkom Bij Goudkoorts!                ║");
-            Console.WriteLine("║            Druk op een toets om te beginnen          ║");
-            Console.WriteLine("║                Druk op S om te stoppen               ║");
+            Console.WriteLine("║               Druk op S om te beginnen               ║");
+            Console.WriteLine("║               Druk op ESC om te stoppen              ║");
             Console.WriteLine("╚══════════════════════════════════════════════════════╝");
             Console.WriteLine("");
-            Console.ReadLine();
         }
 
-        public void IntroLegenda()
+        public void PrintLegenda()
         {
-            System.Console.Clear();
             Console.WriteLine("╔════════════════════════════════╦═════════════════════╗");
             Console.WriteLine("║    betekenis van de symbolen   ║  doel van het spel  ║");
             Console.WriteLine("║                                ║                     ║");
@@ -47,7 +47,17 @@ namespace Goudkoorts.View
             Console.WriteLine("║       #   : end track          ║                     ║");
             Console.WriteLine("╚════════════════════════════════╩═════════════════════╝");
             Console.WriteLine("");
-            Console.ReadLine();
+        }
+
+        public void PrintGameOver()
+        {
+            System.Console.Clear();
+            Console.WriteLine("╔══════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                        Game Over!                    ║");
+            Console.WriteLine("║            Druk op R om overnieuw te spelen          ║");
+            Console.WriteLine("║                Druk op ESC om te stoppen             ║");
+            Console.WriteLine("╚══════════════════════════════════════════════════════╝");
+            Console.WriteLine("");
         }
     }
 }

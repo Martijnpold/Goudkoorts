@@ -12,9 +12,7 @@ namespace Goudkoorts
     {
         static void Main(string[] args)
         {
-            LevelCreator p = new LevelCreator();
-            p.Create();
-            Console.ReadLine();
+            new GameController();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Goudkoorts.View
 {
     public class InputView
     {
-        public ConsoleKey getKeyPress()
+        public ConsoleKey GetKeyPress()
         {
             return Console.ReadKey().Key;
         }
