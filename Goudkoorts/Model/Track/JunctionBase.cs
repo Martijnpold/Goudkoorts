@@ -38,5 +38,15 @@ namespace Goudkoorts.Model
                 tile.MoveCartOnTop(Cart, GetNext());
             }
         }
+
+        public override ConsoleColor GetColor()
+        {
+            return ConsoleColor.Red;
+        }
+
+        public override ConsoleColor GetBackgroundColor()
+        {
+            return ConsoleColor.DarkGreen;
+        }
     }
 }

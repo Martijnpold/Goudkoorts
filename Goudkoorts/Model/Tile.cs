@@ -24,5 +24,9 @@ namespace Goudkoorts.Model
             if (TrackOnTop == null) return;
             TrackOnTop.MoveOnTop(cart, dir);
         }
+
+        public abstract ConsoleColor GetColor();
+
+        public abstract ConsoleColor GetBackgroundColor();
     }
 }

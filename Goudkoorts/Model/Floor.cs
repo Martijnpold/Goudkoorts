@@ -13,5 +13,17 @@ namespace Goudkoorts.Model
             if (TrackOnTop != null) return TrackOnTop.GetIcon();
             return ' ';
         }
+
+        public override ConsoleColor GetBackgroundColor()
+        {
+            if (TrackOnTop != null) return TrackOnTop.GetBackgroundColor();
+            return ConsoleColor.DarkGreen;
+        }
+
+        public override ConsoleColor GetColor()
+        {
+            if (TrackOnTop != null) return TrackOnTop.GetColor();
+            return ConsoleColor.White;
+        }
     }
 }

@@ -23,6 +23,8 @@ namespace Goudkoorts.View
                 xDone = false;
                 while (!xDone)
                 {
+                    Console.ForegroundColor = x.GetColor();
+                    Console.BackgroundColor = x.GetBackgroundColor();
                     Console.Write(x.GetIcon());
                     xDone = !x.Neighbours.ContainsKey(Direction.Right);
                     if (!xDone) x = x.Neighbours[Direction.Right];
@@ -31,6 +33,7 @@ namespace Goudkoorts.View
                 yDone = !y.Neighbours.ContainsKey(Direction.Down);
                 if (!yDone) y = y.Neighbours[Direction.Down];
             }
+            Console.ResetColor();
         }
 
         public void PrintWelcomeScreen()

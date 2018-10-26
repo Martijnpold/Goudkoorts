@@ -73,5 +73,15 @@ namespace Goudkoorts.Model
             }
             return '*';
         }
+
+        public override ConsoleColor GetColor()
+        {
+            return ConsoleColor.White;
+        }
+
+        public override ConsoleColor GetBackgroundColor()
+        {
+            return ConsoleColor.DarkGreen;
+        }
     }
 }

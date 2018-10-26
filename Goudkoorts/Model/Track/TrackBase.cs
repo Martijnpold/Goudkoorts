@@ -23,5 +23,9 @@ namespace Goudkoorts.Model
         public abstract void Tick();
 
         public abstract char GetIcon();
+
+        public abstract ConsoleColor GetColor();
+
+        public abstract ConsoleColor GetBackgroundColor();
     }
 }
