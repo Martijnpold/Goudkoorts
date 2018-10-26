@@ -65,6 +65,7 @@
     <Compile Include="Model\Track\SpawnTrack.cs" />
     <Compile Include="View\InputView.cs" />
     <Compile Include="View\OutputView.cs" />
+    <Compile Include="Controller\ViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

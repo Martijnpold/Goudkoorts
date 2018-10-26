@@ -75,5 +75,20 @@ namespace Goudkoorts.View
             Console.WriteLine("╚══════════════════════════════════════════════════════╝");
             Console.WriteLine("");
         }
+
+        public void PrintJunctionLegenda()
+        {
+            Console.WriteLine("╔══════════════════════════════════════════════════════╗");
+            Console.WriteLine("║            1       2       3       4       5         ║");
+            Console.WriteLine("╚══════════════════════════════════════════════════════╝");
+            Console.WriteLine("");
+        }
+        public void PrintExitMessage()
+        {
+            System.Console.Clear();
+            Console.WriteLine("weet je zeker dat je wilt stoppen? (J / N)");
+            Console.WriteLine("");
+        }
     }
+
 }
