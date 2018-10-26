@@ -42,5 +42,15 @@ namespace Goudkoorts.Model
             if (Cart != null) return Cart.GetIcon();
             return '#';
         }
+
+        public override ConsoleColor GetColor()
+        {
+            return ConsoleColor.Red;
+        }
+
+        public override ConsoleColor GetBackgroundColor()
+        {
+            return ConsoleColor.DarkGreen;
+        }
     }
 }
