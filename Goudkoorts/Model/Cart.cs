@@ -11,6 +11,12 @@ namespace Goudkoorts.Model
         public bool HasGold { get; set; }
         public TrackBase Track { get; set; }
 
+        public Cart(TrackBase track)
+        {
+            Track = track;
+            HasGold = true;
+        }
+
         public void Decouple()
         {
             if (Track != null)
@@ -20,11 +26,16 @@ namespace Goudkoorts.Model
             }
         }
 
+        public void Couple(TrackBase track)
+        {
+            Track = track;
+            track.Cart = this;
+        }
+
         public char GetIcon()
         {
             if (HasGold) return 'Û';
             return 'U';
         }
-
     }
 }

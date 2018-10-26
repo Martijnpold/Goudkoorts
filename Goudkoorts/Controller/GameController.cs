@@ -16,7 +16,6 @@ namespace Goudkoorts.Controller
 
         public GameController()
         {
-            _timerController = new TimeController();
             _viewController = new ViewController(this);
             Start();
         }
@@ -32,18 +31,39 @@ namespace Goudkoorts.Controller
             creator.Create();
             Map = creator.Map;
 
-            _viewController.ShowLevel(Map);
-        }
+            if (_timerController != null) _timerController.StopThread();
+            _timerController = new TimeController(this, Map, 10, 0.9, 2000);
+            _timerController.Start();
 
-        // Game Finished = When a cart has a collision with another cart
-        //public bool IsCrashed()
-        //{
-        //    return //if carts have crashed or nah.
-        //}
+            _viewController.ShowLevel(Map);
+            while (!Map.GameOver)
+            {
+                _viewController.DoMove();
+            }
+            GameOver();
+        }
 
         public void GameOver()
         {
-            _viewController.ShowGameOver();
+            _viewController.ShowGameOver(Map.GetScore());
+        }
+
+        public void Crashed()
+        {
+            Map.GameOver = true;
+        }
+
+        public void SpawnCart()
+        {
+            Random r = new Random();
+            int index = r.Next(0, Map.Spawns.Count);
+            SpawnTrack spawn = Map.Spawns[index];
+            spawn.Spawn();
+        }
+
+        public void UpdateMap()
+        {
+            _viewController.ShowLevel(Map);
         }
 
         // Switch Junction method
@@ -53,6 +73,7 @@ namespace Goudkoorts.Controller
             {
                 if (junction.Id == id) junction.Switch();
             }
+            UpdateMap();
         }
 
         // Exit Game

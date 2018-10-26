@@ -12,10 +12,12 @@ namespace Goudkoorts.Model
 
         public void Switch()
         {
-            if(Direction.Equals(Direction.Up))
+            if (Cart != null) return;
+            if (Direction == Direction.Up)
             {
                 Direction = Direction.Down;
-            } else
+            }
+            else
             {
                 Direction = Direction.Up;
             }
@@ -24,10 +26,25 @@ namespace Goudkoorts.Model
         public override void MoveOnTop(Cart cart, Direction dir)
         {
             Direction from = DirectionUtils.GetOpposite(dir);
-            if(GetPrevious().Equals(from))
+            Direction prev = GetPrevious();
+            if (prev == from)
             {
-                Cart = cart;
+                if (Cart == null)
+                {
+                    cart.Decouple();
+                    cart.Couple(this);
+                }
             }
+        }
+
+        public override void DockBoat(Boat boat)
+        {
+            return;
+        }
+
+        public override void Undock()
+        {
+            return;
         }
 
         public override void Tick()

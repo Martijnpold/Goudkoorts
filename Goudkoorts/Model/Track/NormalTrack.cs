@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Goudkoorts.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,9 @@ namespace Goudkoorts.Model
             return In;
         }
 
-        public override List<Direction> GetAllConnections()
+        public override List<Direction> GetPreviousConnections()
         {
-            Direction[] directions = new Direction[] { GetPrevious(), GetNext() };
+            Direction[] directions = new Direction[] { GetPrevious() };
             return new List<Direction>(directions);
         }
 
@@ -31,16 +32,30 @@ namespace Goudkoorts.Model
             if (Cart == null)
             {
                 cart.Decouple();
-                Cart = cart;
+                cart.Couple(this);
             }
+            else
+            {
+                throw new CartCrashException();
+            }
+        }
+
+        public override void DockBoat(Boat boat)
+        {
+            return;
+        }
+
+        public override void Undock()
+        {
+            return;
         }
 
         public override void Tick()
         {
             if (Cart != null)
             {
-                Tile tile = Tile.Neighbours[GetNext()];
-                tile.MoveCartOnTop(Cart, GetNext());
+                Tile tile = Tile.Neighbours[Out];
+                tile.MoveCartOnTop(Cart, Out);
             }
         }
 

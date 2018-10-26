@@ -19,19 +19,23 @@ namespace Goudkoorts.Controller
             River[] rivers = new River[12];
             for (int x = 0; x < 12; x++)
             {
-                River river = new River();
+                River river = new River() { Id = x };
                 if (x == 0)
                 {
                     Map.Corner = river;
                 }
-                else
+                if (x > 0)
                 {
-                    river.Previous = rivers[x - 1];
-                    rivers[x - 1].Next = river;
+                    river.Next = rivers[x - 1];
+                    river.Next.Previous = river;
                 }
+
                 grid[x, 0] = river;
                 rivers[x] = river;
             }
+
+            rivers[11].Boat = new Boat(Map, rivers[11]);
+            Map.RiverEnd = rivers[0];
 
             for (int y = 0; y < 10; y++)
             {
@@ -48,6 +52,7 @@ namespace Goudkoorts.Controller
             //End
             //#<<<<<<<<D<<
             EndTrack endTrack = new EndTrack();
+            Map.RailEnds.Add(endTrack);
             grid[0, 1].TrackOnTop = endTrack;
             grid[1, 1].TrackOnTop = new NormalTrack() { Out = Direction.Left, In = Direction.Right };
             grid[2, 1].TrackOnTop = new NormalTrack() { Out = Direction.Left, In = Direction.Right };
@@ -63,7 +68,9 @@ namespace Goudkoorts.Controller
             //___________^
             grid[11, 2].TrackOnTop = new NormalTrack() { Out = Direction.Up, In = Direction.Down };
             //S>>V_>>>>V_^
-            grid[0, 3].TrackOnTop = new SpawnTrack();
+            SpawnTrack spawn = new SpawnTrack();
+            Map.Spawns.Add(spawn);
+            grid[0, 3].TrackOnTop = spawn;
             grid[1, 3].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
             grid[2, 3].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
             grid[3, 3].TrackOnTop = new NormalTrack() { Out = Direction.Down, In = Direction.Left };
@@ -87,7 +94,9 @@ namespace Goudkoorts.Controller
             grid[10, 4].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
             grid[11, 4].TrackOnTop = new NormalTrack() { Out = Direction.Up, In = Direction.Left };
             //S>>^_>V_>^__
-            grid[0, 5].TrackOnTop = new SpawnTrack();
+            spawn = new SpawnTrack();
+            Map.Spawns.Add(spawn);
+            grid[0, 5].TrackOnTop = spawn;
             grid[1, 5].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
             grid[2, 5].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
             grid[3, 5].TrackOnTop = new NormalTrack() { Out = Direction.Up, In = Direction.Left };
@@ -104,7 +113,9 @@ namespace Goudkoorts.Controller
             Map.Junctions.Add(junc);
             grid[8, 6].TrackOnTop = junc;
             //S>>>>>^_>>>V
-            grid[0, 7].TrackOnTop = new SpawnTrack();
+            spawn = new SpawnTrack();
+            Map.Spawns.Add(spawn);
+            grid[0, 7].TrackOnTop = spawn;
             grid[1, 7].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
             grid[2, 7].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
             grid[3, 7].TrackOnTop = new NormalTrack() { Out = Direction.Right, In = Direction.Left };
@@ -161,7 +172,7 @@ namespace Goudkoorts.Controller
                             x1--;
                             break;
                         }
-
+                        
                         if (x1 >= 0 && x1 < grid.GetLength(0))
                             if (y1 >= 0 && y1 < grid.GetLength(1))
                                 tile.Neighbours[dir] = grid[x1, y1];

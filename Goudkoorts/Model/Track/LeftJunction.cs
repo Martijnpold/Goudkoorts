@@ -10,17 +10,17 @@ namespace Goudkoorts.Model
     {
         public override Direction GetNext()
         {
-            return Direction;
+            return Direction.Right;
         }
 
         public override Direction GetPrevious()
         {
-            return Direction.Left;
+            return Direction;
         }
 
-        public override List<Direction> GetAllConnections()
+        public override List<Direction> GetPreviousConnections()
         {
-            Direction[] dirs = { Direction.Left, Direction.Up, Direction.Down };
+            Direction[] dirs = { Direction.Up, Direction.Down };
             return new List<Direction>(dirs);
         }
 

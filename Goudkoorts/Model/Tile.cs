@@ -9,6 +9,7 @@ namespace Goudkoorts.Model
     public abstract class Tile
     {
         public TrackBase TrackOnTop { get; set; }
+        private IScoreHolder _scoreholder { get; set; }
 
         public Dictionary<Direction, Tile> Neighbours { get; set; }
 
@@ -28,5 +29,9 @@ namespace Goudkoorts.Model
         public abstract ConsoleColor GetColor();
 
         public abstract ConsoleColor GetBackgroundColor();
+
+        public abstract void DockBoat(Boat boat);
+
+        public abstract void Undock();
     }
 }

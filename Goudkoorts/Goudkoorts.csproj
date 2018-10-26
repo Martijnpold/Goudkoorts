@@ -46,8 +46,10 @@
     <Compile Include="Controller\GameController.cs" />
     <Compile Include="Controller\LevelCreator.cs" />
     <Compile Include="Controller\TimeController.cs" />
+    <Compile Include="Model\Boat.cs" />
     <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\Floor.cs" />
+    <Compile Include="Model\IScoreHolder.cs" />
     <Compile Include="Model\River.cs" />
     <Compile Include="Model\Track\EndTrack.cs" />
     <Compile Include="Model\Track\DockTrack.cs" />
@@ -63,9 +65,11 @@
     <Compile Include="Model\Track\NormalTrack.cs" />
     <Compile Include="Model\Track\SafeTrack.cs" />
     <Compile Include="Model\Track\SpawnTrack.cs" />
+    <Compile Include="Utils\BaseThread.cs" />
+    <Compile Include="Utils\CartCrashException.cs" />
     <Compile Include="View\InputView.cs" />
     <Compile Include="View\OutputView.cs" />
-    <Compile Include="Controller\ViewController.cs" />
+    <Compile Include="View\ViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

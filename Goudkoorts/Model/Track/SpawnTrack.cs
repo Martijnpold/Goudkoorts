@@ -9,7 +9,7 @@ namespace Goudkoorts.Model
     {
         public void Spawn()
         {
-            throw new NotImplementedException();
+            Cart = new Cart(this);
         }
 
         public override Direction GetNext()
@@ -22,7 +22,7 @@ namespace Goudkoorts.Model
             return Direction.None;
         }
 
-        public override List<Direction> GetAllConnections()
+        public override List<Direction> GetPreviousConnections()
         {
             Direction[] directions = new Direction[] { GetNext() };
             return new List<Direction>(directions);
@@ -33,8 +33,18 @@ namespace Goudkoorts.Model
             if (Cart == null)
             {
                 cart.Decouple();
-                Cart = cart;
+                cart.Couple(this);
             }
+        }
+
+        public override void DockBoat(Boat boat)
+        {
+            return;
+        }
+
+        public override void Undock()
+        {
+            return;
         }
 
         public override void Tick()

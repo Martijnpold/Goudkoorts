@@ -13,11 +13,13 @@ namespace Goudkoorts.Controller
     {
         private GameController _gamecontroller;
         private Map _map { get; set; }
+        public int SpawnDelay { get; set; }
         public int NextSpawn { get; set; }
-        public double SpawnDelay { get; set; }
-        public double TimerFactor { get; set; }
 
-        public TimeController(GameController gamecontroller, Map map, int spawndelay, double timerfactor)
+        public double TimerFactor { get; set; }
+        public int Interval { get; set; }
+
+        public TimeController(GameController gamecontroller, Map map, int spawndelay, double timerfactor, int interval)
         {
             _gamecontroller = gamecontroller;
             _map = map;
@@ -25,49 +27,79 @@ namespace Goudkoorts.Controller
             SpawnDelay = spawndelay;
             NextSpawn = spawndelay;
             TimerFactor = timerfactor;
+            Interval = interval;
         }
 
-        public void TickRails()
+        private void TickRails()
         {
+            List<Cart> processedCarts = new List<Cart>();
             List<TrackBase> processed = new List<TrackBase>();
-            List<TrackBase> queue = _map.RailEnds;
+            List<TrackBase> queue = new List<TrackBase>(_map.RailEnds);
             while (queue.Count > 0)
             {
                 TrackBase toProcess = queue[0];
-                Tile processedTile = toProcess.Tile;
-                toProcess.Tick();
                 queue.RemoveAt(0);
-                foreach (Direction connection in toProcess.GetAllConnections())
+
+                if (processed.Contains(toProcess)) continue;
+                processed.Add(toProcess);
+                if (toProcess.Cart != null && processedCarts.Contains(toProcess.Cart)) continue;
+                if (toProcess.Cart != null) processedCarts.Add(toProcess.Cart);
+                toProcess.Tick();
+
+                Tile processedTile = toProcess.Tile;
+                foreach (Direction connection in toProcess.GetPreviousConnections())
                 {
+                    if (!processedTile.Neighbours.ContainsKey(connection)) continue;
+
                     Tile neighbour = processedTile.Neighbours[connection];
-                    if (neighbour.TrackOnTop != null && !processed.Contains(neighbour.TrackOnTop))
+                    if (neighbour.TrackOnTop != null)
                         queue.Add(neighbour.TrackOnTop);
                 }
             }
         }
 
-        public void TickSpawn()
+        private void TickSpawn()
         {
             NextSpawn--;
             if (NextSpawn <= 0)
             {
-                //_gamecontroller.SpawnCart();
-                if(SpawnDelay > 2)
-                {
-                    SpawnDelay *= TimerFactor;
-                    if (SpawnDelay < 2) SpawnDelay = 2;
-                }
-                NextSpawn = (int) Math.Ceiling(SpawnDelay);
+                _gamecontroller.SpawnCart();
+                Interval = (int) (Interval * TimerFactor);
+                NextSpawn = SpawnDelay;
             }
+        }
+
+        private void TickRiver()
+        {
+            River river = _map.RiverEnd;
+            while(river.Previous != null)
+            {
+                river.Tick();
+                river = river.Previous;
+            }
+            river.Tick();
         }
 
         public override void RunThread()
         {
-            while (true)
+            try
             {
-                Thread.Sleep(1000);
-                TickRails();
-                TickSpawn();
+                while (true)
+                {
+                    try
+                    {
+                        Thread.Sleep(Interval);
+                        TickRiver();
+                        TickRails();
+                        TickSpawn();
+                        _gamecontroller.UpdateMap();
+                    }
+                    catch (ThreadInterruptedException) { }
+                }
+            }
+            catch (CartCrashException)
+            {
+                _gamecontroller.Crashed();
             }
         }
     }

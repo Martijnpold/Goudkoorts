@@ -17,7 +17,7 @@ namespace Goudkoorts.Model
             return Direction.Right;
         }
 
-        public override List<Direction> GetAllConnections()
+        public override List<Direction> GetPreviousConnections()
         {
             Direction[] directions = new Direction[] { GetPrevious() };
             return new List<Direction>(directions);
@@ -28,8 +28,18 @@ namespace Goudkoorts.Model
             if (Cart == null)
             {
                 cart.Decouple();
-                Cart = cart;
+                cart.Couple(this);
             }
+        }
+
+        public override void DockBoat(Boat boat)
+        {
+            return;
+        }
+
+        public override void Undock()
+        {
+            return;
         }
 
         public override void Tick()

@@ -16,9 +16,13 @@ namespace Goudkoorts.Model
 
         public abstract Direction GetPrevious();
 
-        public abstract List<Direction> GetAllConnections();
+        public abstract List<Direction> GetPreviousConnections();
 
         public abstract void MoveOnTop(Cart cart, Direction dir);
+
+        public abstract void DockBoat(Boat boat);
+
+        public abstract void Undock();
 
         public abstract void Tick();
 

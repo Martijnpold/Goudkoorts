@@ -18,10 +18,10 @@ namespace Goudkoorts.Model
     {
         public static Direction GetOpposite(Direction direction)
         {
-            if (direction.Equals(Direction.Up)) return Direction.Down;
-            if (direction.Equals(Direction.Right)) return Direction.Left;
-            if (direction.Equals(Direction.Down)) return Direction.Up;
-            if (direction.Equals(Direction.Left)) return Direction.Right;
+            if (direction == Direction.Up) return Direction.Down;
+            if (direction == Direction.Right) return Direction.Left;
+            if (direction == Direction.Down) return Direction.Up;
+            if (direction == Direction.Left) return Direction.Right;
             return Direction.None;
         }
     }

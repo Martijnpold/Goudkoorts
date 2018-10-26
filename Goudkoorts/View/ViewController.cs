@@ -3,6 +3,7 @@ using Goudkoorts.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,29 +34,27 @@ namespace Goudkoorts.View
             }
         }
 
+        [MethodImpl(MethodImplOptions.Synchronized)]
         public void ShowLevel(Map map)
         {
-            LevelCreator creator = new LevelCreator();
-            creator.Create();
-            map = creator.Map;
-            while (true)
-            {
-                _outputView.PrintLevel(map);
-                ConsoleKey input = _inputView.GetKeyPress();
-                if (input == ConsoleKey.Escape) _gameController.QuitGame();
-                if (input == ConsoleKey.D1) _gameController.SwitchJunction(1);
-                if (input == ConsoleKey.D2) _gameController.SwitchJunction(2);
-                if (input == ConsoleKey.D3) _gameController.SwitchJunction(3);
-                if (input == ConsoleKey.D4) _gameController.SwitchJunction(4);
-                if (input == ConsoleKey.D5) _gameController.SwitchJunction(5);
-                //if(IsCrashed()) GameOver();
-            }
+            _outputView.PrintLevel(map);
         }
 
-        public void ShowGameOver()
+        public void DoMove()
         {
             ConsoleKey input = _inputView.GetKeyPress();
-            _outputView.PrintGameOver();
+            if (input == ConsoleKey.Escape) _gameController.QuitGame();
+            if (input == ConsoleKey.D1) _gameController.SwitchJunction(1);
+            if (input == ConsoleKey.D2) _gameController.SwitchJunction(2);
+            if (input == ConsoleKey.D3) _gameController.SwitchJunction(3);
+            if (input == ConsoleKey.D4) _gameController.SwitchJunction(4);
+            if (input == ConsoleKey.D5) _gameController.SwitchJunction(5);
+        }
+
+        public void ShowGameOver(int score)
+        {
+            _outputView.PrintGameOver(score);
+            ConsoleKey input = _inputView.GetKeyPress();
             if (input == ConsoleKey.R) _gameController.Start();
             if (input == ConsoleKey.Escape) Environment.Exit(0);
         }

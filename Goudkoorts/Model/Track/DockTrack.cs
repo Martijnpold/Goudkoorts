@@ -7,6 +7,8 @@ namespace Goudkoorts.Model
 {
     public class DockTrack : TrackBase
     {
+        public Boat Boat { get; set; }
+
         public override Direction GetNext()
         {
             return Direction.Left;
@@ -17,24 +19,37 @@ namespace Goudkoorts.Model
             return Direction.Right;
         }
 
-        public override List<Direction> GetAllConnections()
+        public override List<Direction> GetPreviousConnections()
         {
-            Direction[] directions = new Direction[] { GetPrevious(), GetNext() };
+            Direction[] directions = new Direction[] { GetPrevious() };
             return new List<Direction>(directions);
         }
 
         public override void MoveOnTop(Cart cart, Direction dir)
         {
-            if(Cart == null)
+            if (Cart == null)
             {
                 cart.Decouple();
-                Cart = cart;
+                cart.Couple(this);
+                if (Boat != null)
+                    Boat.DumpGold(cart);
             }
+        }
+
+        public override void DockBoat(Boat boat)
+        {
+            Boat = boat;
+            boat.IsDocked = true;
+        }
+
+        public override void Undock()
+        {
+            Boat = null;
         }
 
         public override void Tick()
         {
-            if(Cart != null)
+            if (Cart != null)
             {
                 Tile tile = Tile.Neighbours[GetNext()];
                 tile.MoveCartOnTop(Cart, GetNext());

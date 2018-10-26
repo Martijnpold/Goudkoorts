@@ -13,6 +13,7 @@ namespace Goudkoorts.View
         public void PrintLevel(Map map)
         {
             Console.Clear();
+            Console.WriteLine("Score: {0}", map.GetScore());
             Tile x, y;
             bool xDone, yDone;
             y = map.Corner;
@@ -68,11 +69,12 @@ namespace Goudkoorts.View
             Console.WriteLine("");
         }
 
-        public void PrintGameOver()
+        public void PrintGameOver(int score)
         {
             System.Console.Clear();
             Console.WriteLine("╔══════════════════════════════════════════════════════╗");
             Console.WriteLine("║                        Game Over!                    ║");
+            Console.WriteLine("║                         Score: " + score + "                    ║");
             Console.WriteLine("║            Druk op 'r' om overnieuw te spelen        ║");
             Console.WriteLine("║                Druk op 'ESC' om te stoppen           ║");
             Console.WriteLine("╚══════════════════════════════════════════════════════╝");

@@ -25,5 +25,21 @@ namespace Goudkoorts.Model
             if (TrackOnTop != null) return TrackOnTop.GetColor();
             return ConsoleColor.White;
         }
+
+        public override void DockBoat(Boat boat)
+        {
+            if(TrackOnTop != null)
+            {
+                TrackOnTop.DockBoat(boat);
+            }
+        }
+
+        public override void Undock()
+        {
+            if (TrackOnTop != null)
+            {
+                TrackOnTop.Undock();
+            }
+        }
     }
 }
