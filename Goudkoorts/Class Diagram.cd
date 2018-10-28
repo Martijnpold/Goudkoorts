@@ -1,44 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Goudkoorts.View.InputView" Collapsed="true">
-    <Position X="11.25" Y="1.5" Width="1.5" />
+  <Class Name="Goudkoorts.View.InputView">
+    <Position X="8.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>View\InputView.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Goudkoorts.View.OutputView" Collapsed="true">
-    <Position X="13.75" Y="1.5" Width="1.5" />
+  <Class Name="Goudkoorts.View.OutputView">
+    <Position X="8.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAABAAAAAAAAAAAAAkIAAAAACAAAAA=</HashCode>
       <FileName>View\OutputView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.Tile">
-    <Position X="23.75" Y="12.25" Width="1.5" />
+    <Position X="23.5" Y="14.75" Width="1.5" />
     <AssociationLine Name="Neighbours" Type="Goudkoorts.Model.Tile" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="25.25" Y="12.75" />
-        <Point X="25.5" Y="12.75" />
-        <Point X="25.5" Y="14.062" />
-        <Point X="25.25" Y="14.062" />
+        <Point X="25" Y="15.25" />
+        <Point X="25.25" Y="15.25" />
+        <Point X="25.25" Y="16.562" />
+        <Point X="25" Y="16.562" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.31" Y="0.079" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="TrackOnTop" Type="Goudkoorts.Model.TrackBase" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="23.938" Y="12.25" />
-        <Point X="23.938" Y="9.67" />
-        <Point X="22.927" Y="9.67" Type="JumpStart" />
-        <Point X="22.76" Y="9.67" Type="JumpEnd" />
-        <Point X="19.021" Y="9.67" Type="JumpStart" />
-        <Point X="18.854" Y="9.67" Type="JumpEnd" />
-        <Point X="14.646" Y="9.67" Type="JumpStart" />
-        <Point X="14.479" Y="9.67" Type="JumpEnd" />
-        <Point X="14.25" Y="9.67" />
-      </Path>
+    <AssociationLine Name="TrackOnTop" Type="Goudkoorts.Model.TrackBase">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.009" Y="0.179" />
+      </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>gBAAAAAAAAAAAAAAAACAgAAAAAAAEACAAAAAAABAAAI=</HashCode>
@@ -51,17 +43,22 @@
       <Property Name="Neighbours" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Goudkoorts.Controller.GameController" Collapsed="true">
-    <Position X="12.5" Y="4" Width="1.5" />
-    <AssociationLine Name="Map" Type="Goudkoorts.Model.Map">
+  <Class Name="Goudkoorts.Controller.GameController">
+    <Position X="14.25" Y="4.25" Width="1.5" />
+    <AssociationLine Name="Map" Type="Goudkoorts.Model.Map" ManuallyRouted="true">
+      <Path>
+        <Point X="15" Y="6.892" />
+        <Point X="15" Y="7.75" />
+      </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-0.599" Y="0.29" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="_viewController" Type="Goudkoorts.View.ViewController" FixedToPoint="true">
       <Path>
-        <Point X="12.75" Y="4" />
-        <Point X="12.75" Y="3.312" />
+        <Point X="14.25" Y="6.603" />
+        <Point X="12.5" Y="6.603" />
+        <Point X="12.5" Y="6.315" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.103" Y="0.098" />
@@ -78,18 +75,20 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.TrackBase">
-    <Position X="12.75" Y="8.25" Width="1.5" />
+    <Position X="12.5" Y="10.75" Width="1.5" />
     <AssociationLine Name="Tile" Type="Goudkoorts.Model.Tile" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="14.25" Y="8.929" />
-        <Point X="14.479" Y="8.929" Type="JumpStart" />
-        <Point X="14.646" Y="8.929" Type="JumpEnd" />
-        <Point X="18.854" Y="8.929" Type="JumpStart" />
-        <Point X="19.021" Y="8.929" Type="JumpEnd" />
-        <Point X="22.76" Y="8.929" Type="JumpStart" />
-        <Point X="22.927" Y="8.929" Type="JumpEnd" />
-        <Point X="24.5" Y="8.929" />
-        <Point X="24.5" Y="12.25" />
+        <Point X="14" Y="11.429" />
+        <Point X="14.292" Y="11.429" Type="JumpStart" />
+        <Point X="14.458" Y="11.429" Type="JumpEnd" />
+        <Point X="14.667" Y="11.429" Type="JumpStart" />
+        <Point X="14.833" Y="11.429" Type="JumpEnd" />
+        <Point X="15.042" Y="11.429" Type="JumpStart" />
+        <Point X="15.208" Y="11.429" Type="JumpEnd" />
+        <Point X="18.604" Y="11.429" Type="JumpStart" />
+        <Point X="18.771" Y="11.429" Type="JumpEnd" />
+        <Point X="24.25" Y="11.429" />
+        <Point X="24.25" Y="14.75" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -102,17 +101,22 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.Map">
-    <Position X="12.5" Y="5.25" Width="1.5" />
-    <AssociationLine Name="RailEnds" Type="Goudkoorts.Model.TrackBase">
+    <Position X="14.25" Y="7.75" Width="1.5" />
+    <AssociationLine Name="RailEnds" Type="Goudkoorts.Model.TrackBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.375" Y="9.882" />
+        <Point X="14.375" Y="12.908" />
+        <Point X="14" Y="12.908" />
+      </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.081" Y="0.433" />
+        <Position X="-0.033" Y="-0.295" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="Corner" Type="Goudkoorts.Model.Tile" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="14" Y="5.586" />
-        <Point X="24.938" Y="5.586" />
-        <Point X="24.938" Y="12.25" />
+        <Point X="15.75" Y="8.438" />
+        <Point X="24.688" Y="8.438" />
+        <Point X="24.688" Y="14.75" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-0.741" Y="0.395" />
@@ -120,13 +124,32 @@
     </AssociationLine>
     <AssociationLine Name="Junctions" Type="Goudkoorts.Model.JunctionBase" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="14" Y="6.317" />
-        <Point X="18.938" Y="6.317" />
-        <Point X="18.938" Y="12.25" />
+        <Point X="15.75" Y="8.817" />
+        <Point X="18.688" Y="8.817" />
+        <Point X="18.688" Y="14.75" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-0.924" Y="0.203" />
       </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Spawns" Type="Goudkoorts.Model.SpawnTrack" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.75" Y="9.882" />
+        <Point X="14.75" Y="14.375" />
+        <Point X="13.875" Y="14.375" />
+        <Point X="13.875" Y="14.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RiverEnd" Type="Goudkoorts.Model.River" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.125" Y="9.882" />
+        <Point X="15.125" Y="18.078" />
+        <Point X="17.167" Y="18.078" Type="JumpStart" />
+        <Point X="17.333" Y="18.078" Type="JumpEnd" />
+        <Point X="19.167" Y="18.078" Type="JumpStart" />
+        <Point X="19.333" Y="18.078" Type="JumpEnd" />
+        <Point X="22.25" Y="18.078" />
+      </Path>
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAgIAAAAAAAAgAAAEgAAAACAAEAAABAAAAgAAAAAA=</HashCode>
@@ -144,28 +167,28 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Goudkoorts.Model.NormalTrack">
-    <Position X="8" Y="12.25" Width="1.5" />
+    <Position X="7.75" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>wBAAAAAAAAAAAAAAACCAAAAAAAAAAAKAAAAAAgAIQCI=</HashCode>
       <FileName>Model\Track\NormalTrack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.JunctionBase">
-    <Position X="17.75" Y="12.25" Width="1.5" />
+    <Position X="17.5" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAACAAAAAAAAAIAAACCAAAAAAAAAAACAAAAAAAAIQAI=</HashCode>
       <FileName>Model\Track\JunctionBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.SafeTrack">
-    <Position X="9.75" Y="12.25" Width="1.5" />
+    <Position X="9.5" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gBAAAAAAAAAAAAAAACCAAAAAAAAAAAKAAAAAAgAIQAI=</HashCode>
       <FileName>Model\Track\SafeTrack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.DockTrack">
-    <Position X="11.5" Y="12.25" Width="1.5" />
+    <Position X="11.25" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gBAAAAAAAAAAAAAAICCAAAAAAAAAAAKAAAAAAgAIQAI=</HashCode>
       <FileName>Model\Track\DockTrack.cs</FileName>
@@ -175,21 +198,21 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.SpawnTrack">
-    <Position X="13.25" Y="12.25" Width="1.5" />
+    <Position X="13" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gBAAAAAAAAAAAAAAACGAAAAAAAAAAAKAAAAAAgAIQAI=</HashCode>
       <FileName>Model\Track\SpawnTrack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.EndTrack">
-    <Position X="15" Y="12.25" Width="1.5" />
+    <Position X="15.25" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gBAAAAAAAAAAAAAAACCAAAAAAAAAAAKAAAAAAgAIQAI=</HashCode>
       <FileName>Model\Track\EndTrack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.Cart">
-    <Position X="10.5" Y="8.25" Width="1.5" />
+    <Position X="10.25" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAQAAAAAEAAAAAAIAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Model\Cart.cs</FileName>
@@ -198,21 +221,34 @@
       <Property Name="Track" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Goudkoorts.Controller.TimeController" Collapsed="true">
-    <Position X="15.5" Y="4" Width="1.5" />
+  <Class Name="Goudkoorts.Controller.TimeController">
+    <Position X="17.5" Y="4.25" Width="1.5" />
     <InheritanceLine Type="Goudkoorts.Utils.BaseThread" FixedToPoint="true">
       <Path>
-        <Point X="16.25" Y="3.312" />
-        <Point X="16.25" Y="4" />
+        <Point X="20.5" Y="4.25" />
+        <Point X="20.5" Y="3.875" />
+        <Point X="18.25" Y="3.875" />
+        <Point X="18.25" Y="4.25" />
       </Path>
     </InheritanceLine>
+    <AssociationLine Name="_map" Type="Goudkoorts.Model.Map" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.094" Y="7.281" />
+        <Point X="18.094" Y="8" />
+        <Point X="15.75" Y="8" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>ACAAAAgAAAAAAAAAAMAAKAAACQAAACAAAEAAAAAAAAA=</HashCode>
       <FileName>Controller\TimeController.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_gamecontroller" />
+      <Property Name="_map" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Goudkoorts.Controller.LevelCreator" Collapsed="true">
-    <Position X="10" Y="6" Width="1.5" />
+  <Class Name="Goudkoorts.Controller.LevelCreator">
+    <Position X="9" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Controller\LevelCreator.cs</FileName>
@@ -222,14 +258,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.Floor">
-    <Position X="25" Y="15.25" Width="1.5" />
+    <Position X="24.75" Y="17.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gBAAAAAAAAAAAAAAAACAAAAAAAAAAACAAAAAAAAAAAI=</HashCode>
       <FileName>Model\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.River">
-    <Position X="22.5" Y="15.25" Width="1.5" />
+    <Position X="22.25" Y="17.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ghACAAAAAAAAAgAAIACAAAAAAAAAAACAAAAAAAAAQAI=</HashCode>
       <FileName>Model\River.cs</FileName>
@@ -241,31 +277,48 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.LeftJunction">
-    <Position X="16.75" Y="15.75" Width="1.5" />
+    <Position X="16.5" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAAAAgAAAAA=</HashCode>
       <FileName>Model\Track\LeftJunction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.RightJunction">
-    <Position X="18.75" Y="15.75" Width="1.5" />
+    <Position X="18.5" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAAAAgAAAAA=</HashCode>
       <FileName>Model\Track\RightJunction.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Goudkoorts.Program" Collapsed="true">
-    <Position X="10" Y="4" Width="1.5" />
+  <Class Name="Goudkoorts.Program">
+    <Position X="21.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Goudkoorts.View.ViewController" Collapsed="true">
-    <Position X="12.5" Y="2.75" Width="1.5" />
-    <AssociationLine Name="_gameController" Type="Goudkoorts.Controller.GameController">
+  <Class Name="Goudkoorts.View.ViewController">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <AssociationLine Name="_inputView" Type="Goudkoorts.View.InputView" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.125" Y="4.25" />
+        <Point X="13.125" Y="2.625" />
+        <Point X="10.25" Y="2.625" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_outputView" Type="Goudkoorts.View.OutputView" FixedFromPoint="true">
+      <Path>
+        <Point X="12.25" Y="4.375" />
+        <Point X="10.25" Y="4.375" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_gameController" Type="Goudkoorts.Controller.GameController" ManuallyRouted="true">
+      <Path>
+        <Point X="13.75" Y="5.282" />
+        <Point X="14.25" Y="5.282" />
+      </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-1.297" Y="0.11" />
+        <Position X="-0.002" Y="0.132" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -278,46 +331,47 @@
       <Field Name="_gameController" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Goudkoorts.Utils.BaseThread" Collapsed="true">
-    <Position X="15.5" Y="2.75" Width="1.5" />
+  <Class Name="Goudkoorts.Utils.BaseThread">
+    <Position X="19.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAgAACAAAAkAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Utils\BaseThread.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Utils.CartCrashException" Collapsed="true">
-    <Position X="7.5" Y="6.75" Width="1.5" />
+    <Position X="7.25" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Utils\CartCrashException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.Boat">
-    <Position X="11.5" Y="17.25" Width="1.5" />
+    <Position X="11.25" Y="19.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAQCAABAAAABABAAAAAABAAAAAAAAAIAEAAgAAAQAE=</HashCode>
       <FileName>Model\Boat.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_scoreholder" />
+      <Property Name="River" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.DirectionUtils" Collapsed="true">
-    <Position X="7.5" Y="6" Width="1.5" />
+    <Position X="7.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Direction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Goudkoorts.Model.IScoreHolder" Collapsed="true">
-    <Position X="14.5" Y="19.25" Width="1.5" />
+    <Position X="14.25" Y="21.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAgAAAAAA=</HashCode>
       <FileName>Model\IScoreHolder.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="Goudkoorts.Model.Direction" Collapsed="true">
-    <Position X="8" Y="10.5" Width="1.5" />
+  <Enum Name="Goudkoorts.Model.Direction">
+    <Position X="7.25" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAEAAAI=</HashCode>
       <FileName>Model\Direction.cs</FileName>
