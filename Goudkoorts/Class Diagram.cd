@@ -27,6 +27,19 @@
         <Position X="0.31" Y="0.079" />
       </MemberNameLabel>
     </AssociationLine>
+    <AssociationLine Name="TrackOnTop" Type="Goudkoorts.Model.TrackBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="23.938" Y="12.25" />
+        <Point X="23.938" Y="9.67" />
+        <Point X="22.927" Y="9.67" Type="JumpStart" />
+        <Point X="22.76" Y="9.67" Type="JumpEnd" />
+        <Point X="19.021" Y="9.67" Type="JumpStart" />
+        <Point X="18.854" Y="9.67" Type="JumpEnd" />
+        <Point X="14.646" Y="9.67" Type="JumpStart" />
+        <Point X="14.479" Y="9.67" Type="JumpEnd" />
+        <Point X="14.25" Y="9.67" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>gBAAAAAAAAAAAAAAAACAgAAAAAAAEACAAAAAgABAAAI=</HashCode>
       <FileName>Model\Tile.cs</FileName>
@@ -46,9 +59,13 @@
         <Position X="-0.599" Y="0.29" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="_viewController" Type="Goudkoorts.View.ViewController">
+    <AssociationLine Name="_viewController" Type="Goudkoorts.View.ViewController" FixedToPoint="true">
+      <Path>
+        <Point X="12.75" Y="4" />
+        <Point X="12.75" Y="3.312" />
+      </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-1.242" Y="0.11" />
+        <Position X="0.103" Y="0.098" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -63,6 +80,19 @@
   </Class>
   <Class Name="Goudkoorts.Model.TrackBase">
     <Position X="12.75" Y="8.25" Width="1.5" />
+    <AssociationLine Name="Tile" Type="Goudkoorts.Model.Tile" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="8.929" />
+        <Point X="14.479" Y="8.929" Type="JumpStart" />
+        <Point X="14.646" Y="8.929" Type="JumpEnd" />
+        <Point X="18.854" Y="8.929" Type="JumpStart" />
+        <Point X="19.021" Y="8.929" Type="JumpEnd" />
+        <Point X="22.76" Y="8.929" Type="JumpStart" />
+        <Point X="22.927" Y="8.929" Type="JumpEnd" />
+        <Point X="24.5" Y="8.929" />
+        <Point X="24.5" Y="12.25" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>gBAAAEAAAAAAAAAAACCAAAAAAAAAAAKAAAAAAgAIQQI=</HashCode>
       <FileName>Model\Track\TrackBase.cs</FileName>
@@ -77,6 +107,26 @@
     <AssociationLine Name="RailEnds" Type="Goudkoorts.Model.TrackBase">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.081" Y="0.433" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Corner" Type="Goudkoorts.Model.Tile" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="5.586" />
+        <Point X="24.938" Y="5.586" />
+        <Point X="24.938" Y="12.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.741" Y="0.395" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Junctions" Type="Goudkoorts.Model.JunctionBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14" Y="6.317" />
+        <Point X="18.938" Y="6.317" />
+        <Point X="18.938" Y="12.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.924" Y="0.203" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -214,6 +264,11 @@
   </Class>
   <Class Name="Goudkoorts.View.ViewController" Collapsed="true">
     <Position X="12.5" Y="2.75" Width="1.5" />
+    <AssociationLine Name="_gameController" Type="Goudkoorts.Controller.GameController">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.297" Y="0.11" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAQAAAAIAAAAAAEAAAABAAAAAAAACAAACAAACAAAEA=</HashCode>
       <FileName>View\ViewController.cs</FileName>
@@ -253,7 +308,7 @@
     </TypeIdentifier>
   </Class>
   <Interface Name="Goudkoorts.Model.IScoreHolder" Collapsed="true">
-    <Position X="23.5" Y="6.25" Width="1.5" />
+    <Position X="26.5" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAgAAAAAA=</HashCode>
       <FileName>Model\IScoreHolder.cs</FileName>
