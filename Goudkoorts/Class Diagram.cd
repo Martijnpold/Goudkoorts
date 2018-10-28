@@ -41,12 +41,11 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>gBAAAAAAAAAAAAAAAACAgAAAAAAAEACAAAAAgABAAAI=</HashCode>
+      <HashCode>gBAAAAAAAAAAAAAAAACAgAAAAAAAEACAAAAAAABAAAI=</HashCode>
       <FileName>Model\Tile.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="TrackOnTop" />
-      <Property Name="_scoreholder" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Neighbours" />
@@ -242,14 +241,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.LeftJunction">
-    <Position X="16.75" Y="15.5" Width="1.5" />
+    <Position X="16.75" Y="15.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAAAAgAAAAA=</HashCode>
       <FileName>Model\Track\LeftJunction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.RightJunction">
-    <Position X="18.75" Y="15.5" Width="1.5" />
+    <Position X="18.75" Y="15.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAAAAgAAAAA=</HashCode>
       <FileName>Model\Track\RightJunction.cs</FileName>
@@ -293,12 +292,15 @@
       <FileName>Utils\CartCrashException.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Goudkoorts.Model.Boat" Collapsed="true">
+  <Class Name="Goudkoorts.Model.Boat">
     <Position X="11.5" Y="17.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAQCAABAAAABABAAAAAABAAAAAAAAAIAEAAgAAAQAE=</HashCode>
       <FileName>Model\Boat.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_scoreholder" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.DirectionUtils" Collapsed="true">
     <Position X="7.5" Y="6" Width="1.5" />
@@ -308,7 +310,7 @@
     </TypeIdentifier>
   </Class>
   <Interface Name="Goudkoorts.Model.IScoreHolder" Collapsed="true">
-    <Position X="26.5" Y="12.25" Width="1.5" />
+    <Position X="14.5" Y="19.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAgAAAAAA=</HashCode>
       <FileName>Model\IScoreHolder.cs</FileName>

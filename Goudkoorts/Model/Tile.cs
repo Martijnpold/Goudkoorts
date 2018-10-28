@@ -9,7 +9,6 @@ namespace Goudkoorts.Model
     public abstract class Tile
     {
         public TrackBase TrackOnTop { get; set; }
-        private IScoreHolder _scoreholder { get; set; }
 
         public Dictionary<Direction, Tile> Neighbours { get; set; }
 
